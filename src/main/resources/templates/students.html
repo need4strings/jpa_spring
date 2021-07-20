@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Students</title>
+    <style>
+
+        table {
+          font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: right;
+          background-color: #04AA6D;
+          color: white;
+        }
+
+        td, th {
+          border: 2px solid black;
+          text-align: center;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+</style>
+</head>
+<body>
+<h1>These are your Students:</h1>
+<table id = "students">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>EDITION</th>
+    </tr>
+    <tr th:each="user: ${users}">
+        <td th:text="${user.idCard}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.edition}"></td>
+    </tr>
+</table>
+</body>
+</html>
